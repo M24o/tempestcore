@@ -1,0 +1,48 @@
+# Copyright (C) 2005-2009 MaNGOS project <http://getmangos.com/>
+#
+# Copyright (C) 2005-2010 Trinity <http://www.trinitycore.org/>
+#
+# Copyright (C) 2010 Myth Project <http://code.google.com/p/mythcore/>
+#
+# This file is free software; as a special exception the author gives
+# unlimited permission to copy and/or distribute it, with or without
+# modifications, as long as this notice is preserved.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+if( CMAKE_COMPILER_IS_GNUCXX )
+  add_definitions(--no-warnings)
+elseif( MSVC )
+  add_definitions(/W0)
+endif()
+
+if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+  if(SERVERS)
+    add_subdirectory(jemalloc)
+    set(JEMALLOC_LIB "jemalloc")
+  endif()
+endif()
+
+if(CMAKE_SYSTEM_NAME MATCHES "Windows")
+  if(SERVERS)
+    add_subdirectory(acelite)
+    if(USE_MYSQL_SOURCES)
+      add_subdirectory(mysqllite)
+    endif()
+  endif()
+  add_subdirectory(bzip2)
+  add_subdirectory(zlib)
+endif()
+
+add_subdirectory(g3dlite)
+
+if(SERVERS)
+  add_subdirectory(sockets)
+  add_subdirectory(gsoap)
+endif()
+
+if(TOOLS)
+  add_subdirectory(libmpq)
+endif()

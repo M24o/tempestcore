@@ -1,0 +1,31 @@
+# use glob syntax.
+syntax: glob
+
+src/server/shared/revision.h
+build/
+bin/
+win/
+.directory
+*.orig
+*.rej
+*~
+*.obj
+.git/
+externals/lib/*/
+*.ncb
+*.suo
+*.*-*
+*.user
+*.sdf
+*.opensdf
+*.cache
+*.rar
+*.zip
+*.7zip
+*.7z
+
+# use regexp syntax.
+syntax: regexp
+
+^src/shared/server/shared/revision\.h
+glob:*.patch

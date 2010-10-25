@@ -1,0 +1,125 @@
+                                                      * MythProject:MythCore,MythDB,MythWEB *
+                                                                * Thanks and Credits * 
+            *********************************************************************************************************************************
+             ******************************************* Myth Project Merged with that Projects: *******************************************
+              ********************************************              HISTORY                 *******************************************
+  *****************************************************************************************************************************************************
+  * 1) with MythCore which are forked from TrinityCore rev 8787 and started developing by Sun in Bitbucket (https://bitbucket.org/sun/myth-core)      *
+  * 2) with Secondorder (http://code.google.com/p/secondorder/)										// Polish TrinityCore fork (Subversion)           *
+  * 3) with glantidiavol-gameportal (http://code.google.com/r/glantidiavol-gameportal/)                                                               *
+  * ------------------------------------------------------------------------------------------------------------------------------------------------- *
+  * When Veanyr and Alex Bolostin Join to the Team. it grow to project and moved on GoogleCode.                                                       *
+  * ------------------------------------------------------------------------------------------------------------------------------------------------- * 
+  * 4) with Dws-Core (http://code.google.com/p/dws-core/)                                           // German TrinityCore Fork                        *
+  * 5) with dominicustorreto-akil (http://code.google.com/r/dominicustorreto-akil/)                                                                   *
+  * 6) with RibonCore (http://www.riboncore.com/)                                                   // German TrinityCore Fork, VERY IMPORTANT MERGE! *
+  * 7) with EmeraldEmu (http://code.google.com/p/emeraldemu/)                                                                                         *
+  * 8) with BloodyCore (http://code.google.com/p/bloodycore/)                                       // Italian TrinityCore Fork                       *
+  * ------------------------------------------------------------------------------------------------------------------------------------------------- *
+  *  20.08.2010  moved to Private Fork. Done more then 1120 revisions.                                                                                *
+  * ------------------------------------------------------------------------------------------------------------------------------------------------- *
+  *  10.09.2010                                                                                                                                       *
+  * We will move in to private again if:                                                                                                              *
+  * a) We Found that somebody make money, and sell our code for money.                                                                                *
+  * b) Low development activity ( I won`t do that all alone )                                                                                         *
+  * c) If you use parts of our code, please save our copyrights                                                                                       *
+  * ------------------------------------------------------------------------------------------------------------------------------------------------- *
+  * 9) with QplayCore (https://bitbucket.org/viste/qplaycore/overview)                               // Ukrainian TrinityCore Fork                    * 
+  * 10) with FaceCore (http://bitbucket.org/signfinder/facecore/overview)                                                                             *
+  * 11) with Bondiano`s ScripDev2 Fork (https://bitbucket.org/bondiano/scriptdev2/)                                                                   *
+  * 12) with Ololo Project (https://bitbucket.org/viste/ololo)                                                                                        *
+  ***************************************************************************************************************************************************** 
+
+ MythCore is a derivation/rewrite of TrinityCore, which was originally written
+ by the Python Team, by the WoW Daemon Team and by the MaNGOS Team. Many people further helped Trinity Core
+ by submitting bug reports, code patches, and suggestions. Thanks to the community!
+
+ Special thanks should go out to the WowwoW team. We have gained help from 
+ them many times in the creation of this project. Keep up the good work guys.
+
+ Thanks to the Trinity Team (http://trinitycore.org/) for Scripts/Fixes.
+ Thanks to the MaNGOS Team (http://getmangos.com/) for Scripts/Fixes.
+ Thanks to the TDB Team (http://code.google.com/p/trinitydb/) for DB
+ Thanks to the CTDB Team (https://bitbucket.org/spyder/ctdb) for DB.
+ Thanks to the YTDB Team (http://ytdb.ru) for DB.
+ Thanks to the RUDB Team (http://ytdb.ru) for ruRU Locale.
+ Thanks to the GTDB Team (http://sourceforge.net/projects/gm-db/) for deDE Locale.
+ Thanks to the Heisei Project Team (https://bitbucket.org/destros/heisei-project/overview) for DB scripts.
+ Thanks to the ScriptDev2 Team (http://www.scriptdev2.com) for Scripts. 
+ Thanks to the ACID Project Team (http://www.scriptdev2.com/) for DB scripts.
+ Thanks to the SPGM Project Team (http://code.google.com/p/spgm-trinity/) for patches.
+ Thanks to the TCFr Project Team (http://code.google.com/p/tcfr-patch/) for patches.
+ Thanks to the Phantom Core Team (http://github.com/Kirito/PhantomCore/) for fixes/scripts.
+ Thanks to the Bloody Core Team (http://code.google.com/p/bloodycore/) for fixes/scripts.
+ Thanks to the Ribon Core Team (http://riboncore.com/) for fixes/scripts.
+ Thanks to the EmeraldEmu Team (http://code.google.com/p/emeraldemu/) for fixes/scripts.
+ Thanks to the RoCore Team (http://github.com/myh/rocore/) for fixes/scripts.
+ Thanks to the EasyCore Team (http://bitbucket.org/easytrinity/easycore) for fixes/scripts.
+ Thanks to the FaceCore Team (http://bitbucket.org/signfinder/facecore/overview) for fixes/scripts.
+ Thanks to the LoL Core Team (http://hg.assembla.com/LoL_Trinity/) for fixes/scripts.
+ Thanks to the http://trinitycore.org website for support.
+ Thanks to the http://trinity-core.ru website for support.
+ Thanks to the http://getmangos.com website for support.
+ Thanks to the WCell Team (especially Ralek) for research on realm reconnect
+ sequence, item scaling stats algorithm, gameobject rotation issues.
+
+ Thanks go out to the following people for various patches/code (listed in the
+ order they were added): w12x, dythzer, XEQT, death420, balrok, TOM_RUS, Scazzato88,
+ Runningnak3d, Seline, KingPin, raczman, bogie, Neo2003, NoFantasy, Derex, dj_stels,
+ Freghar, Toilet1, megamage, MadJack, WarHead, gvcoman, Ntsc, arrai, jrkpote, bwsrv,
+ Seraphim, vagoth, KerchumA222, Rognar, Blaymoira, DragonHunter, Molius, ApoC, Leak,
+ SeT, hunuza, Wyk3d, VladimirMangos, rj686, Arthorius, QAston, Muhaha, dereka, Alex,
+ Kaldorei, NuRRi, Biglad, Machiavelli, Nivelo, Paradox, Aokromes, EleGoS, vipmaster,
+ Visagalis, reno, Cybrax, GriffonHeart, fgenesis, rilex, XTElite1, Anubisss, hoshie,
+ Iskander, arclite, Bladex, EIFEL, Klaimmore, XTZGZoReX, panaut0lordv, DearScorpion,
+ BlueSteel, AlexDereka, Drahy, krz, Xeptor, Sethoso, Sarjuuk, pasdVn, nissen, fredi,
+ Triply, `win, Fog, emsy, McBitter, Lukaasm, maikash, Wormheart, DonTomika, Ille000,
+ DiSlord, Tiretunderl, Ramses_II, cccyril, Cha0S2, miebaik, Trazom, KiriX, liwinine,
+ DarkEvil, Sorken, Kudlaty, Charlie2025, Medwise, Rat, Lutik, domingo, tolgagolbasi,
+ TrullyONE, rastikzzz, Tassader, Lightguard, KAPATEJIb, Tux`Volant, Jeniczek, Alyen,
+ Asael, Elron, False, nos4r2zod, Disassembler, thumsoul, rvnth, throneinc, Dr.tenma,
+ MrTux, Luniz2k1, Dani, BroodWyrm, raven_coda, Bagsac, Thraxx, Trogvar, borgnr01001,
+ Teacher4, zhenya, Albrecht de Endrau, Phacops, Naicisum, Sephiroth1984, zhanhang03,
+ Cryingcloud, freeganja, Foks, daveh, Az@zel, evilstar, Corfen, Astellar, Christyan,
+ DEN_North, StarJoker, Nezemnoy, X-Savior, subhuman_bob, Ambal, Brueggus, SilverIce,
+ Jojo, Trojan, tvaroh, Genars, BombermaG, Bulkin, nesocip, xILOSWag, thenecromancer, 
+ Uruviel, timmit, SeT, Seizerkiller, Stokrotka, JoN0, Tanatos, Hunteee, Joda, Sparc,
+ Farah, Them, DaGNU, arthurcik, BudIcePenguin, Amok, Amit86, onkelz28, Azrael, shax,
+ Larva, Roland, DerDyddye, Vicos, PSZ, CRAZyBUg, irish, hunuza, bufferoverflow, Den,
+ Mike753, Xlybriem, Paytheo, ArticDevil, FearX, Beaste,maxdestroyer, Seirge, crackm,
+ Liszt, duckman, Joro, Charlie, smellbee, bigjohnson4, Saeba, Maxxie, tlexii, Nevan, 
+ Ckegg, Drethek, yad02, Win32, NetSky, Zcuron, Necroo, ogeraisi, Coldblooded, Keany,
+ Edder, riddick, Craker, NeoLithicX, srounet, SLG, Tidus, neo0608, SyRiOCoP, GuruRD,
+ F636y623, Patro, mobel, simak, hectolight, Riccardo, GodsdoG, Gomez, kamir86, Atom,
+ Qubix, Deafboy, Authorius, DarkRabbit, mrbungle, netoya, peldor, antihrists, Ghost,
+ Moandor, Ebx, DasBlub, Guenex, Brats, Lucy, Arcx, Enril, Oiler2112, ge0rg, eumario,
+ Wizz, Elminster, 123qwe, NeatElves, Turk3y, deicide, vladonix, Erocoloco, Bondiano,
+ Skystar, Reve, jorooo, FrozenDB, miranda.conrado, Tequila, Gommes, Zerg2000, Ramor,
+ Aerione_alt, Rastik, FrenchW, wilibald09, Velorien, kancaras, fisherman, BloodWyrm,
+ Aviram, Mufik, loop69, multiplexer, Koani, rechapa79, kozelo, MeanMachine, Redcore, 
+ fregh, adrycasillo, IncoGnito, Alez, Itch, Kuteur, MaS0n, peaceman, manuel, Seirgy,
+ Gendalph, Lynx3d, raftom, Infinity, Ebrithil, Sorya, HP1, Prince, nicola.gorghetto,
+ Boogie, Necro, Thyros, simon, MrSmite, horogandris, Stryker, MaXiMiUS, kaell, Krad,
+ totoro, Forgiven, Big, Oculus, Lorac, Nemesis, Epsik, iadus3, durotar, filip.satek,
+ fukifat, imbecile, Nafsih, Meldanor, Turok, Naturamen, Themris, Sundark, nuna.vlad,
+ Azuritus, jotapdiez, EnderGT, Curuad, oc_redfox, rockzOr, Darkshines, tassader1000,
+ BlackYoghurt, McLovin, Gyullo, kaxap, Hawthorne, nanouniko, new001, Opterman, Kain,
+ Typhoon, Cleave, HiZed, The_Game_Master, Athor, Veras, Menia, Jolan, BlackOne, Ned,
+ johnholiver, Spp, Drevi, kb_z, Tartalo, Shendor, Demonx, Taliesin, defacer, MadMan,
+ SoulForge, Jackpoz, Cass, QuaLiT1, exul182, sunwell, AniRB, clotza, Tommassino, eL,
+ dracula70, alexsot, RedSonja, Cnillidan, Proofzor, aqs999, Sony, amsjunior123, Myh,
+ Sisif, Joshh, alex_1983, arez, RammboNr5, Insider, bodompelle, lobuz, Azazel, M24o,
+ footman, elron103, make_the_king, destros, MetaphysicalDrama, disassebler, sokysrm,
+ Malcrom, Vladmimír Lipták, Retriman, hyriuu, Smakapotatis, PainKiller, PrinceCreed,
+ bkhorizon, n0n4m3, Chesterfield, Frankir, Wowka321, Morpheux, p0wer, Jakub.Neumann,
+ Ouden, toshik, laise, yavi, Splinter, Syntec, Arthas, denyde, unholy, scarymovie87,
+ Sun, Vaenyr, Alex Bolotsin, Teddy, Zynum, Drave, Icerobert, Heisenberg, Zwerg, Rsa,
+ Dekona, blackdown, Viste, Kirito, Chaosua, PrinceCreed, Rapoza, diton89, Fob, m.ax,
+ Vaughner, blackmanos, edrinn, Liberate, Shauren, dr.tenma, click, silverice, Skrbx, 
+ SupaBad, Xanadu, Socolin, Shocker, Silinoron, 0xFuture, xK1, Ramus, menke, nugu100,
+ wowgargamel, Dark0r, Kierkegaard, StormByte, joshwhedon, Terrorbringer, SignFinder,
+ BlackCat0110, JuliuSZS, n4rk0, filip.havlicek, laviniu, LordJZ, wr.jr1994997, Easy,
+ svannon, jurkovic.nikola, Willian Krueger, BioHazard, Havenard, filip.satek, Ghost,        
+ Spgm, Dakeyras, sombre88, 19Maxx83, moriquendu, Ille, breakerfly, FaTe753, FaTe753,
+ zthoreen, clement.roussel, p.alexej, Ceris, Nayre, Kiper, announce, thmarth, D3VIL,
+ Ner'zhul, DarkXuan, D_Skywalk, Destalker, mknjc, bobaz, Overy, Equilibrio, Joda 

@@ -1,0 +1,59 @@
+# Copyright (C) 2005-2009 MaNGOS project <http://getmangos.com/>
+#
+# Copyright (C) 2005-2010 Trinity <http://www.trinitycore.org/>
+#
+# Copyright (C) 2010 Myth Project <http://code.google.com/p/mythcore/>
+#
+# This file is free software; as a special exception the author gives
+# unlimited permission to copy and/or distribute it, with or without
+# modifications, as long as this notice is preserved.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+MythCore uses (parts of or in whole) the following opensource software :
+
+ACE (ADAPTIVE Communication Environment)
+  http://www.cs.wustl.edu/~schmidt/ACE.html
+  Version: 5.8.1
+
+bzip2 (a freely available, patent free, high-quality data compressor)
+  http://www.bzip.org/
+  Version: 1.0.5
+
+G3D (a commercial-grade C++ 3D engine available as Open Source (BSD License)
+  http://g3d.sourceforge.net/
+  Version: 8.0-Release
+
+jemalloc (a general-purpose scalable concurrent malloc-implementation)
+  http://www.canonware.com/jemalloc/
+  Version: 1.0.0
+  
+libMPQ (a library for reading MPQ files)
+  https://libmpq.org/
+  Version: 1.0.4
+
+MersenneTwister (a very fast random number generator)
+  http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html
+  Version: 0.4.2
+
+MySQL (the world's most popular open source database software)
+  http://www.mysql.com/
+  Version: 5.1.50 (GA)
+
+SFMT (SIMD-oriented Fast Mersenne Twister)
+  Based on http://agner.org/random/
+  Version: 2010-Aug-03
+
+sockets (a GPL licensed C++ class library wrapping the berkeley sockets C API)
+  http://www.alhem.net/Sockets/
+  Version: UNKNOWN
+
+utf8-cpp (UTF-8 with C++ in a Portable Way)
+  http://utfcpp.sourceforge.net/
+  Version: 2.3
+
+zlib (A Massively Spiffy Yet Delicately Unobtrusive Compression Library)
+  http://www.zlib.net/
+  Version: 1.2.5

@@ -1,0 +1,186 @@
+                                                              HYDROMIC ToDO List
+########################################################################################################################
+#  BRANCHES SYSTEM!
+# 1st MAIN BRANCH: Default: All accepted and tested changes. MUST BE STABLE AND WITH OUT CRASHES!
+# 2nd MAIN BRANCH: Milestone vX.X: Accepted Fixes, use Closed last Milestones for life servers. MUST BE STABLE AS ROCK! 
+# 3th MINOR BRANCH: Under Development: Contain Untested and uncompileable changes.
+# 4th MINOR BRANCH: Movement Maps // PlayGround: This Branch Constain Movement MMaps + Milestone Branch change sets, MUST BE STABLE AS ROCK!
+#
+# Hotfixes/Crashfixes. Fast as can need to put in to Default & Milestone branches.
+# 
+#  INFO:
+# MythCore: https://bitbucket.org/zynum/mythcore
+# MythDB: https://bitbucket.org/AlexBolotsin/myth-db
+# MythWeb: https://bitbucket.org/Vaenyr/myth-web
+#
+# DON`T PUSH YOUR CHANGESETS, UNTIL THEY AREN`T COMPILEBLE!!!
+# (Keep them in your local repo, but don`t push)
+#
+########################################################################################################################
+# MYTH TEAM:
+# Zynum, Vaenyr, Anti, Drave,
+# Teddy, Chaosua, Icerobert, Ned,
+# Blackdown, Kain, Artis, Keany
+########################################################################################################################
+
+################
+#    Crashes   #
+################
+CRASHES must be solved as fast as we can.
+http://code.google.com/p/mythcore/issues/detail?id=264 NEED TO FIX!
+ 
+################
+#    Compile   #
+################
+Solve all Complile Warnings. Please devs resolve all warnings.
+ 
+################
+#    StartUP   #
+################
+DONE!
+
+################
+#   Security   #
+################
+"Dupe" item Problems
+* NEED FEEDBACK from SECUTIRY BRANCH!
+Global Cooldown control by server
+* NEED FEEDBACK from SECUTIRY BRANCH!
+Protect from any WoWEmuHack cheats
+* NEED FEEDBACK from SECUTIRY BRANCH!
+Protect from certain WPE filtre (flood cooldown)
+* NEED FEEDBACK from SECUTIRY BRANCH!
+
+                                                  FEEDBACK
+########################################################################################################################
+
+#################
+# BattleGrounds #
+#################
+Isle Of Conquest
+ * NEED FEEDBACK from DEFAULT BRANCH!
+ TRANSLATE SQL TO ENGLISH!
+
+################
+#    Arenas    #
+################
+Orgrimmar Arena
+ * NEED FEEDBACK from DEFAULT BRANCH!
+Dalaran Arena
+ * NEED FEEDBACK from DEFAULT BRANCH!
+ 
+####################
+# Raids / Dungeons #
+####################
+[??%] Ruby Sanctum
+* Please test this instance in default.
+
+[??%] Icecrown Citadel
+* NEED FEEDBACK from DEFAULT BRANCH!
+* The gunship battle is not scripted
+Need to test.
+  
+[??%] Ulduar
+* NEED FEEDBACK from DEFAULT BRANCH!
+Need to test.
+  
+[??%] Trial of the Crusader
+* Fix crashes, and test this instance and fix bugs.
+
+[??%] Onyxia Lair
+ * NEED FEEDBACK from DEFAULT BRANCH!
+Script all Trash with EventAI
+
+[??%] Naxxramas
+* NEED FEEDBACK from DEFAULT BRANCH!
+Script all Trash with EventAI	
+
+[??%] Nexus: Ocolus
+ * NEED FEEDBACK from DEFAULT BRANCH!
+Script all Trash with EventAI
+
+[??%] Nexus: Eye of Eternity
+ * NEED FEEDBACK from DEFAULT BRANCH!
+
+[??%] Nexus: Nexus
+ * NEED FEEDBACK from DEFAULT BRANCH!
+Script all Trash with EventAI
+
+[??%] Halls of Reflections
+ * NEED FEEDBACK from DEFAULT BRANCH!
+Script all Trash with EventAI
+
+[??%] Trial of the Champion
+ * NEED FEEDBACK from DEFAULT BRANCH!
+
+[??%] Utgarde Pinacle
+ * NEED FEEDBACK from DEFAULT BRANCH!
+Script all Trash with EventAI
+
+Please test all Instance what stands here.
+
+###############
+# Outdoor PvP #
+###############
+Wintergrasp
+Works fine now.
+
+#################
+#    PALADIN    #
+#################
+ 
+#################
+#     Mage      #
+#################
+ 
+#################
+#     Druid     #
+#################
+
+#################
+# Death  Knight #
+#################
+
+#################
+#    Priest     #
+#################
+
+#################
+#     Rogue     #
+#################
+
+#################
+#    Warrior    #
+#################
+
+#################
+#   Warlock     #
+#################
+
+#################
+#     Shaman    #
+#################
+
+#################
+#     Hunter    #
+#################
+
+#################
+#     Glyphs    #
+#################
+
+#################
+#     Quests    #
+#################
+ 
+#################
+#  Professions  #
+#################
+
+####################
+# In-Game Commands #
+####################
+
+Finish MMaps System from Faramir118 repository
+http://github.com/faramir118/mangos/commits/
+Please look in forum for new patches from qsa and faramir118 (Also in MaNGOS Forum)

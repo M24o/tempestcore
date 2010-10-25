@@ -1,0 +1,51 @@
+                   * MythProject * 
+               * General information *
+
+Copyright (C) 2005 - 2010 TrinityCore (http://www.trinitycore.org)
+Copyright (C) 2010 Myth Project (http://code.google.com/p/mythcore/)
+Copyright (C) 2008 - 2010 RibonCore (http://www.riboncore.com/)
+Copyright (C) 2010 EmeraldEmu (http://code.google.com/p/emeraldemu/)
+
+  Based on TrinityCore.
+  Merged with RibonCore in 20.08.2010
+  Merged with EmeraldEmu in 21.08.2010
+
+  Myth Core is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+  In addition, as a special exception, the Myth Project
+  gives permission to link the code of its release of Myth Core with
+  the OpenSSL project's "OpenSSL" library (or with modified versions of
+  it that use the same license as the "OpenSSL" library), and distribute
+  the linked executables.  You must obey the GNU General Public License
+  in all respects for all of the code used other than "OpenSSL".  If you
+  modify this file, you may extend this exception to your version of the
+  file, but you are not obligated to do so.  If you do not wish to do
+  so, delete this exception statement from your version.
+
+MythCore is a World of Warcraft game server emulator. It is derived
+from MaNGOS, TrinityCore, the Massive Network Game Object Server, and is based on the
+code of that project.
+
+For further information on the Myth Project, please visit our
+project website at http://code.google.com/p/mythcore/.
+
+API documentation can be obtained by running the "make doc" command inside
+the doc directory.
+
+SQL files to create the database can be found in the sql directory. Files
+to update your database from an older revision/version can be found in the
+sql/updates directory.
+
+See the docs/UnixInstall.txt file for installation instructions on Linux.
