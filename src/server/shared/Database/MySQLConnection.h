@@ -35,7 +35,6 @@ struct MySQLConnectionInfo
     {
         Tokens tokens = StrSplit(infoString, ";");
         Tokens::iterator iter = tokens.begin();
-		Tokens tokens(infoString, ';');
 
         if (iter != tokens.end())
             host = *iter++;
@@ -55,6 +54,7 @@ struct MySQLConnectionInfo
     std::string host;
     std::string port_or_socket;
 };
+
 
 class MySQLConnection
 {
