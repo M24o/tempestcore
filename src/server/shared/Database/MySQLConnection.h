@@ -46,7 +46,7 @@ struct MySQLConnectionInfo
         if (iter != tokens.end())
             password = *iter++;
         if (iter != tokens.end())
-            database = *iter++;*/
+            database = *iter++;
     }
 
     std::string user;
