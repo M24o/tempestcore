@@ -33,12 +33,11 @@ struct MySQLConnectionInfo
     MySQLConnectionInfo() {}
     MySQLConnectionInfo(const std::string& infoString)
     {
-        /*Tokens tokens = StrSplit(infoString, ";");
-        Tokens::iterator iter = tokens.begin();*/
-		// I think it's better
+        Tokens tokens = StrSplit(infoString, ";");
+        Tokens::iterator iter = tokens.begin();
 		Tokens tokens(infoString, ';');
 
-        /*if (iter != tokens.end())
+        if (iter != tokens.end())
             host = *iter++;
         if (iter != tokens.end())
             port_or_socket = *iter++;
@@ -48,16 +47,6 @@ struct MySQLConnectionInfo
             password = *iter++;
         if (iter != tokens.end())
             database = *iter++;*/
-		if (tokens.size() != 5)
-		    return;
-		
-		uint8i = 0;
-		
-		host.assign(tokens[i++]);
-		port_or_socket.assign(tokens[i++]);
-		user.assign(tokens[i++]);
-		password.assign(tokens[i++]);
-		database.assign(tokens[i++]);
     }
 
     std::string user;
