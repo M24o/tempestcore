@@ -1,33 +1,23 @@
-                                                              HYDROMIC ToDO List
+                                                              TEMPESTCORE ToDO List
 ########################################################################################################################
-#  BRANCHES SYSTEM!
-# 1st MAIN BRANCH: Default: All accepted and tested changes. MUST BE STABLE AND WITH OUT CRASHES!
-# 2nd MAIN BRANCH: Milestone vX.X: Accepted Fixes, use Closed last Milestones for life servers. MUST BE STABLE AS ROCK! 
-# 3th MINOR BRANCH: Under Development: Contain Untested and uncompileable changes.
-# 4th MINOR BRANCH: Movement Maps // PlayGround: This Branch Constain Movement MMaps + Milestone Branch change sets, MUST BE STABLE AS ROCK!
+#  
+# Tested with TDB 34 + All update Source. (Sensi)
+#  
+# INFO:
+# MythCore: http://github.com/M24o/tempestcore
 #
-# Hotfixes/Crashfixes. Fast as can need to put in to Default & Milestone branches.
+#
+########################################################################################################################
+# TEMPEST TEAM:
+# Vaenyr, Sensibob, SpiritCrusher,
+# Anoked, Meandro, M24o, (need?)
 # 
-#  INFO:
-# MythCore: https://bitbucket.org/zynum/mythcore
-# MythDB: https://bitbucket.org/AlexBolotsin/myth-db
-# MythWeb: https://bitbucket.org/Vaenyr/myth-web
-#
-# DON`T PUSH YOUR CHANGESETS, UNTIL THEY AREN`T COMPILEBLE!!!
-# (Keep them in your local repo, but don`t push)
-#
-########################################################################################################################
-# MYTH TEAM:
-# Zynum, Vaenyr, Anti, Drave,
-# Teddy, Chaosua, Icerobert, Ned,
-# Blackdown, Kain, Artis, Keany
 ########################################################################################################################
 
 ################
 #    Crashes   #
 ################
-CRASHES must be solved as fast as we can.
-http://code.google.com/p/mythcore/issues/detail?id=264 NEED TO FIX!
+
  
 ################
 #    Compile   #
@@ -69,61 +59,120 @@ Orgrimmar Arena
 Dalaran Arena
  * NEED FEEDBACK from DEFAULT BRANCH!
  
-####################
-# Raids / Dungeons #
-####################
-[??%] Ruby Sanctum
-* Please test this instance in default.
+############################
+# Raids / Dungeons (Sensi) #
+############################
 
-[??%] Icecrown Citadel
-* NEED FEEDBACK from DEFAULT BRANCH!
+[??%] Ahn'kahet: The Old Kingdom
+* Being tested
+
+
+[??%] Azjol-Nerub: Azjol-Nerub
+* Being tested
+
+
+[??%] Caverns of Time: The Culling of Stratholme
+* Being tested
+
+
+[??%] Drak'Tharon Keep
+* Being tested
+
+
+[??%] Gundrak
+* Being tested
+
+
+[??%] Icecrown Citadel: Halls of Reflection
+* Being tested
+
+
+[??%] Icecrown Citadel: Pit of Saron
+* Being tested
+
+
+[??%] Icecrown Citadel: The Forge of Souls
+* Being tested
+
+
+[??%] Icecrown Citadel: Icecrown Citadel
+* Being tested
 * The gunship battle is not scripted
-Need to test.
-  
-[??%] Ulduar
-* NEED FEEDBACK from DEFAULT BRANCH!
-Need to test.
-  
-[??%] Trial of the Crusader
-* Fix crashes, and test this instance and fix bugs.
 
-[??%] Onyxia Lair
- * NEED FEEDBACK from DEFAULT BRANCH!
-Script all Trash with EventAI
+
+[??%] The Nexus: The Nexus
+* Being tested
+
+[80%] Nexus: Eye of Eternity
+ *The orb does not launch the start of combat, not tested (sensi)
+
+
+[??%] The Nexus: The Oculus
+* Being tested
+
+
+[??%] The Violet Hold
+* Being tested
+
+
+[??%] Ulduar: Halls of Lightning
+* Being tested
+
+
+[??%] Ulduar: Halls of Stone
+* Being tested
+
+
+[70%] Ulduar: Ulduar
+* The towers are not destructible
+* Being tested
+
+
+[??%] Utgarde Keep: Utgarde Keep
+* Being tested
+
+
+[??%] Utgarde Keep: Utgarde Pinnacle
+* Being tested
+
 
 [??%] Naxxramas
-* NEED FEEDBACK from DEFAULT BRANCH!
-Script all Trash with EventAI	
+* Being tested
 
-[??%] Nexus: Ocolus
- * NEED FEEDBACK from DEFAULT BRANCH!
-Script all Trash with EventAI
 
-[??%] Nexus: Eye of Eternity
- * NEED FEEDBACK from DEFAULT BRANCH!
+[??%] Onyxia's Lair
+* Being tested
 
-[??%] Nexus: Nexus
- * NEED FEEDBACK from DEFAULT BRANCH!
-Script all Trash with EventAI
 
-[??%] Halls of Reflections
- * NEED FEEDBACK from DEFAULT BRANCH!
-Script all Trash with EventAI
+[??%] Vault of Archavon
+* Being tested
 
-[??%] Trial of the Champion
- * NEED FEEDBACK from DEFAULT BRANCH!
 
-[??%] Utgarde Pinacle
- * NEED FEEDBACK from DEFAULT BRANCH!
-Script all Trash with EventAI
+[??%] Wyrmrest Temple: The Obsidian Sanctum
+* Being tested
 
-Please test all Instance what stands here.
+
+[??%] Wyrmrest Temple: The Ruby Sanctum
+* Being tested
+
+
+[90%] Trial of the Crusader
+* Work Fine (Sensi)
+*Little prob with Anub'arak spell SPIKE don't damage
+
+
+[100%] Trial of the Champion
+ * Work Fine (Sensi)
+
+
+I would take this list periodically update. (Sensi)
 
 ###############
 # Outdoor PvP #
 ###############
 Wintergrasp
-Works fine now.
+-Works, but they turret don't have a spells (just a little DB prob)
+-The trash does not despawn during the battle
 
 #################
 #    PALADIN    #
