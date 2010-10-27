@@ -91,7 +91,7 @@ class instance_eye_of_eternity : public InstanceMapScript
                 switch(pGo->GetEntry())
                 {
                     case 193070: m_uiMalygosPlatformGUID = pGo->GetGUID(); break;
-                    case 193958: break; //normal,hero
+                    case 193958: //normal,hero  (erased illogical break -- Vaenyr)
                     case 193960: m_uiFocusingIrisGUID = pGo->GetGUID(); break;
                     case 193908: m_uiExitPortalGUID = pGo->GetGUID(); break;
                     default:
@@ -102,12 +102,8 @@ class instance_eye_of_eternity : public InstanceMapScript
             bool IsEncounterInProgress() const
             {
                 for (uint8 i = 0; i < MAX_ENCOUNTER; ++i)
-                {
                     if (m_auiEncounter[i] == IN_PROGRESS)
-                    {
                         return true;
-                    }
-                }
 
                 return false;
             }

@@ -2007,18 +2007,20 @@ class go_malygos_iris : public GameObjectScript
     public:
          go_malygos_iris() : GameObjectScript("go_malygos_iris") { }
 
-         bool OnGossipHello(Player /* *pPlayer*/, GameObject * pGO)
+         bool OnGossipHello(Player* /*pPlayer*/, GameObject* pGO) //there have to be '*' before comment! In other way this function could not be called!
          {
-              if (Creature *malygos = pGO->FindNearestCreature(NPC_MALYGOS, 300.0f, true))
-              {
-                  if (malygos->AI())
-                  {
-                      malygos->AI()->DoAction(0);
-                      pGO->CastSpell(NULL, 61012);
-                      pGO->SetFlag(GAMEOBJECT_FLAGS, GO_FLAG_DESTROYED);
-                  }
-              }
-        return true;
+             InstanceScript* instance = pGO->GetInstanceScript();
+             if (!instance)
+                 return false;
+
+             Creature* malygos = Unit::GetCreature((*pGO), instance->GetData64(NPC_MALYGOS));
+             if (!malygos || !malygos->AI())
+                 return false;
+
+             malygos->AI()->DoAction(0);
+             pGO->CastSpell(NULL, 61012);
+             pGO->SetFlag(GAMEOBJECT_FLAGS, GO_FLAG_DESTROYED);
+             return true;
         }
 };
 
