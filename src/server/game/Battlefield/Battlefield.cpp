@@ -468,11 +468,13 @@ void Battlefield::ShowNpc(Creature* p_Creature,bool p_Aggressive)
 Group* Battlefield::GetFreeBfRaid(uint32 TeamId)
 {
     //if found free group we return it
-    for(GroupSet::const_iterator itr=m_Groups[TeamId].begin();itr!=m_Groups[TeamId].end();++itr)
-    {
-        if(!(*itr)->IsFull())
-            return (*itr);
-    }
+    if (!m_Groups[TeamId].empty())
+        for(GroupSet::const_iterator itr=m_Groups[TeamId].begin(); itr!=m_Groups[TeamId].end(); ++itr)
+        {
+            if(!(*itr)->IsFull())
+                return (*itr);
+        }
+
     //if dont found free group
     Group* g=new Group();    
     m_Groups[TeamId].insert(g);
