@@ -20,3 +20,4 @@ externals/lib/*/
 *.7zip
 *.7z
 *.patch
+*.DS_Store

@@ -4,7 +4,7 @@
 # Tested with TDB 34 + All update Source. (Sensi)
 #  
 # INFO:
-# MythCore: http://github.com/M24o/tempestcore
+# TempestCore: http://github.com/M24o/tempestcore
 #
 #
 ########################################################################################################################
@@ -17,7 +17,7 @@
 ################
 #    Crashes   #
 ################
-
+WG Crash when joining Battle. See http://trinity.elegosproject.org/crash/index.php?id=919742c1c8 for more details. Function AddOrSetPlayerToCorrectBfGroup is the problem.
  
 ################
 #    Compile   #
@@ -173,6 +173,7 @@ I would take this list periodically update. (Sensi)
 Wintergrasp
 -Works, but they turret don't have a spells (just a little DB prob)
 -The trash does not despawn during the battle
+-Crashes sometimes (M24o)
 
 #################
 #    PALADIN    #
