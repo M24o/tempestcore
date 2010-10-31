@@ -73,7 +73,7 @@ class instance_eye_of_eternity : public InstanceMapScript
                 m_bVortex = false;
             }
 
-            void OnCreatureCreate(Creature* pCreature)
+            void OnCreatureCreate(Creature* pCreature, bool /*add*/)
             {
                 switch(pCreature->GetEntry())
                 {
