@@ -17,6 +17,8 @@
 
 /*
  * Author: Vaenyr <vaenyr@gmail.com>
+ *
+ * SQL: UPDATE creature_template SET ScriptName="npc_explosive_sheep" WHERE entry=2675;
  */
 
 #include "ScriptPCH.h"
@@ -54,7 +56,7 @@ public:
                 if (Unit* ptarget = me->GetUnit((*me), target))
                 {
                     if (me->GetDistance2d(ptarget) <= 1.0f)
-                        DoCast(/* boom */, ptarget);
+                        DoCast(4050, ptarget);
                     else
                         me->GetMotionMaster()->MoveChase(ptarget);
                 }
