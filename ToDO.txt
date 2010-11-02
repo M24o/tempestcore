@@ -17,8 +17,8 @@
 ################
 #    Crashes   #
 ################
-WG Crash when joining Battle. See http://trinity.elegosproject.org/crash/index.php?id=919742c1c8 for more details. Function AddOrSetPlayerToCorrectBfGroup is the problem.
- 
+Please report all crashes with crashlog to the issues-tracker!
+
 ################
 #    Compile   #
 ################
@@ -48,9 +48,7 @@ Protect from certain WPE filtre (flood cooldown)
 # BattleGrounds #
 #################
 Isle Of Conquest
- * NEED FEEDBACK from DEFAULT BRANCH!
- TRANSLATE SQL TO ENGLISH!
-
+-Needs complete fix/rewrite.
 ################
 #    Arenas    #
 ################
@@ -100,8 +98,8 @@ Dalaran Arena
 * The gunship battle is not scripted
 
 
-[??%] The Nexus: The Nexus
-* Being tested
+[100%] The Nexus: The Nexus
+Works fine!
 
 [80%] Nexus: Eye of Eternity
  *The orb does not launch the start of combat, not tested (sensi)
@@ -152,8 +150,11 @@ Dalaran Arena
 * Being tested
 
 
-[??%] Wyrmrest Temple: The Ruby Sanctum
-* Being tested
+[70%] Wyrmrest Temple: The Ruby Sanctum
+-Trash doesn't spell.
+-Bosses work fine.
+-Missing Loot!
+
 
 
 [90%] Trial of the Crusader
@@ -173,7 +174,7 @@ I would take this list periodically update. (Sensi)
 Wintergrasp
 -Works, but they turret don't have a spells (just a little DB prob)
 -The trash does not despawn during the battle
--Crashes sometimes (M24o)
+-Crash resolved!
 
 #################
 #    PALADIN    #
