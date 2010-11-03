@@ -39,17 +39,21 @@ Battlefield::~Battlefield()
 }
 void Battlefield::HandlePlayerEnterZone(Player* plr,uint32 /*zone*/)
 {
+    sLog.outBasic("[PLAYER ENTER ZONE <begin>]");
     //If battle is start, 
     //  if it not fully > invite player to join the war
     //  if it fully > announce to player that BF is full and kick after few second if he dont leave
     if(IsWarTime())
     {
+        sLog.outBasic("  War time");
         if(m_PlayersInWar[plr->GetTeamId()].size()+m_InvitedPlayers[plr->GetTeamId()].size() < m_MaxPlayer) //Not fully
         {
+            sLog.outBasic("  war is not full, invite player");
             InvitePlayerToWar(plr);
         }
         else //Full
         {
+            sLog.outBasic("  war full, kick player");
             //TODO:Send packet for announce it to player
             m_PlayersWillBeKick[plr->GetTeamId()][plr->GetGUID()]=time(NULL)+10;
             InvitePlayerToQueue(plr);
@@ -57,6 +61,7 @@ void Battlefield::HandlePlayerEnterZone(Player* plr,uint32 /*zone*/)
     }
     else
     {
+        sLog.outBasic("  Not war time, invite player if neccessery");
         //If time left is <15 minutes invite player to join queue
         if(m_Timer<=m_StartGroupingTimer)
             InvitePlayerToQueue(plr);
@@ -65,6 +70,8 @@ void Battlefield::HandlePlayerEnterZone(Player* plr,uint32 /*zone*/)
     //Add player in list of player in zone
     m_players[plr->GetTeamId()].insert(plr);
     OnPlayerEnterZone(plr);//for scripting
+
+    sLog.outBasic("[PLAYER ENTER ZONE <end>]");
 }
 //Called when a player leave the zone
 void Battlefield::HandlePlayerLeaveZone(Player* plr,uint32 /*zone*/)
@@ -101,6 +108,7 @@ void Battlefield::HandlePlayerLeaveZone(Player* plr,uint32 /*zone*/)
 }
 bool Battlefield::Update(uint32 diff)
 {
+    sLog.outBasic("[UPDATE <begin>] diff = %d, current time = %d", diff, (uint32)time(NULL));
     //When global timer is end
     if(m_Timer<=diff)
     {
@@ -108,11 +116,13 @@ bool Battlefield::Update(uint32 diff)
         if(IsWarTime())
         {
             EndBattle(true);
+            sLog.outBasic("  Battle ended!");
         }
         //Start of battle
         else
         {
             StartBattle();
+            sLog.outBasic("  Battle started!");
         }
     }
     else m_Timer-=diff;
@@ -120,6 +130,7 @@ bool Battlefield::Update(uint32 diff)
     //Some times before battle start invite player to queue
     if(!m_StartGrouping && m_Timer<=m_StartGroupingTimer)
     {
+        sLog.outBasic("  Invite players in zone to war (grouping started)");
         m_StartGrouping = true;
         InvitePlayerInZoneToQueue();
         OnStartGrouping();// for scripting
@@ -171,42 +182,67 @@ bool Battlefield::Update(uint32 diff)
         m_LastResurectTimer=RESURRECTION_INTERVAL;
     }else m_LastResurectTimer-=diff;
 
+    sLog.outBasic("\n BATTLEFIELD CLASS STATUS:");
+    sLog.outBasic("  players in zone:  %d", m_players.size());
+    sLog.outBasic("  players in queue: %d / %d", m_PlayersInQueue[0].size(), m_PlayersInQueue[1].size()");
+    sLog.outBasic("  players in war:   %d / %d", m_PlayersInWar[0].size(), m_PlayersInWar[1].size());
+    sLog.outBasic("  invited players:  %d / %d", m_InvitedPlayers[0].size(), m_InvitedPlayers[1].size());
+    sLog.outBasic("  players to kick:  %d / %d", m_PlayersWillBeKick[0].size(), m_PlayersWillBeKick[1].size());
+    sLog.outBasic("  groups size:      %d / %d", m_Groups[0].size(), m_Groups[1].size());
+    sLog.outBasic("END BATTLEFIELD CLASS STATUS \n");
+
+    sLog.outBasic("[UPDATE <end>]");
     return objective_changed;
 }
 
 void Battlefield::InvitePlayerInZoneToQueue()
 {    
+    sLog.outBasic("[INVITE PLAYER IN ZONE TO QUEUE <begin>]");
     for (uint32 team = 0; team < 2; ++team)
         for (PlayerSet::const_iterator p_itr = m_players[team].begin(); p_itr != m_players[team].end(); ++p_itr)
         {
+            sLog.outBasic("  player (GUID: %d) invited to queue", (*_pitr)->GetGUID());
             InvitePlayerToQueue((*p_itr));
         }
+
+    sLog.outBasic("[INVITE PLAYER IN ZONE TO QUEUE <end>]");
 }
 void Battlefield::InvitePlayerToQueue(Player* plr)
 {   
     if(m_PlayersInQueue[plr->GetTeamId()].count(plr->GetGUID()))
+    {
+        sLog.outBasic("INVITE PLAYER TO QUEUE => player already in queue");
         return;
+    }
     plr->GetSession()->SendBfInvitePlayerToQueue(m_BattleId);
 }
 void Battlefield::InvitePlayerInQueueToWar()
 {    
+    sLog.outBasic("[INVITE PLAYER IN QUEUE TO WAR <begin>]");
     for (uint32 team = 0; team < 2; ++team)
         for (GuidSet::const_iterator p_itr = m_PlayersInQueue[team].begin(); p_itr != m_PlayersInQueue[team].end(); ++p_itr)
         {         
             if(Player* plr=sObjectAccessor.FindPlayer(*p_itr)) {
                 if(m_PlayersInWar[plr->GetTeamId()].size()+m_InvitedPlayers[plr->GetTeamId()].size()<m_MaxPlayer)
+                {
+                    sLog.outBasic("  player invited to war");
                     InvitePlayerToWar(plr);
+                }
                 else
                 {
+                    sLog.outBasic("  war is full, can not invite player to war");
                     //Full
                 }
             }
         }
     m_PlayersInQueue[0].clear();
     m_PlayersInQueue[1].clear();
+
+    sLog.outBasic("[INVITE PLAYER IN QUEUE TO WAR <end>]");
 }
 void Battlefield::InvitePlayerInZoneToWar()
 {    
+    sLog.outBasic("[INVITE PLAYER IN ZONE TO WAR <begin>]");
     for (uint32 team = 0; team < 2; ++team)
         for (PlayerSet::const_iterator p_itr = m_players[team].begin(); p_itr != m_players[team].end(); ++p_itr)
         {
@@ -220,9 +256,12 @@ void Battlefield::InvitePlayerInZoneToWar()
                 m_PlayersWillBeKick[(*p_itr)->GetTeamId()][(*p_itr)->GetGUID()]=time(NULL)+10;
             }
         }
+
+    sLog.outBasic("[INVITE PLAYER IN QUEUE TO WAR <end>]");
 }
 void Battlefield::InvitePlayerToWar(Player* plr)
 {
+    sLog.outBasic("[INVITE PLAYER TO WAR <begin>] player = %d", plr->GetGUID());
     //TODO : needed ?
     if (plr->isInFlight())
         return;
@@ -236,9 +275,12 @@ void Battlefield::InvitePlayerToWar(Player* plr)
     //Check if player is not already in war
     if(m_PlayersInWar[plr->GetTeamId()].count(plr->GetGUID()) || m_InvitedPlayers[plr->GetTeamId()].count(plr->GetGUID()))
         return;
+
+    sLog.outBasic("  player invited successfull");
     m_PlayersWillBeKick[plr->GetTeamId()].erase(plr->GetGUID());
     m_InvitedPlayers[plr->GetTeamId()][plr->GetGUID()]=time(NULL)+m_TimeForAcceptInvite;
     plr->GetSession()->SendBfInvitePlayerToWar(m_BattleId,m_ZoneId,m_TimeForAcceptInvite);
+    sLog.outBasic("[INVITE PLAYER TO WAR <end>]");
 }
 void Battlefield::KickAfk()
 {
@@ -324,10 +366,12 @@ void Battlefield::PlayerAskToLeave(Player* plr)
 }
 void Battlefield::PlayerAcceptInviteToWar(Player *plr)
 {
+    sLog.outBasic("[PLAYER ACCEPT INVITE TO WAR <begin>] player = %d", plr->GetGUID());
     if(!IsWarTime())
         return;
     if(AddOrSetPlayerToCorrectBfGroup(plr))
     {
+        sLog.outBasic("  player joined raid");
         plr->GetSession()->SendBfEntered(m_BattleId);
         m_PlayersInWar[plr->GetTeamId()].insert(plr->GetGUID());
         m_InvitedPlayers[plr->GetTeamId()].erase(plr->GetGUID());
@@ -335,9 +379,8 @@ void Battlefield::PlayerAcceptInviteToWar(Player *plr)
         if(plr->isAFK())
             plr->ToggleAFK();
         OnPlayerJoinWar(plr);//for scripting
-
-
     }
+    sLog.outBasic("[PLAYER ACCEPT INVITE TO WAR <end>]");
 }
 void Battlefield::TeamCastSpell(TeamId team,int32 spellId)
 {
@@ -467,32 +510,46 @@ void Battlefield::ShowNpc(Creature* p_Creature,bool p_Aggressive)
 //*****************************************************
 Group* Battlefield::GetFreeBfRaid(uint32 TeamId)
 {
+    sLog.outBasic("[GET FREE BF SLOT <begin>] team = %d", TeamId);
     //if found free group we return it
     if (!m_Groups[TeamId].empty())
         for(GroupSet::const_iterator itr=m_Groups[TeamId].begin(); itr!=m_Groups[TeamId].end(); ++itr)
         {
             if(!(*itr)->IsFull())
+            {
+                sLog.outBasic("  found already existing not-full group");
+                sLog.outBasic("[GET FREE BF SLOT <end>]");
                 return (*itr);
+            }
         }
 
+    sLog.outBasic("  can not find not-full groupd, creating new one");
     //if dont found free group
     Group* g=new Group();    
     m_Groups[TeamId].insert(g);
+    sLog.outBasic("[GET FREE BF SLOT <end>]");
     return g;
 }
 
 bool Battlefield::AddOrSetPlayerToCorrectBfGroup(Player *plr)
 {
+    sLog.outBasic("[ADD OR SET [...] GROUPD <begin>] player = %d", plr->GetGUID());
     if(!plr->IsInWorld())
         return false;
 
     if(Group* group = plr->GetGroup()) 
+    {
+        sLog.outBasic("  removing player from previous group");
         group->RemoveMember(plr->GetGUID(),GROUP_REMOVEMETHOD_DEFAULT);
+    }
 
+    sLog.outBasic("  trying to add player to new group");
     Group* group = GetFreeBfRaid(plr->GetTeamId());
+    sLog.outBasic("  (NOT CRASHED?)");
     if(!group)
     { 
         sLog.outError("Error:OutdoorPvPWG::AddOrSetPlayerToCorrectBgGroup can't get a group");
+        sLog.outBasic("[ADD OR SET [...] GROUPD <end>] => (!group)")
         return false;
     }
     else 
@@ -511,8 +568,10 @@ bool Battlefield::AddOrSetPlayerToCorrectBfGroup(Player *plr)
         {
             group->AddMember(plr->GetGUID(), plr->GetName());
         }
+        sLog.outBasic("[ADD OR SET [...] GROUPD <end>]");
         return true;
     }
+    sLog.outBasic("[ADD OR SET [...] GROUPD <end>] => false");
     return false;
 }
 //***************End of Group System*******************

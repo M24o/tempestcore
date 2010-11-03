@@ -56,7 +56,7 @@ public:
                 if (Unit* ptarget = me->GetUnit((*me), target))
                 {
                     if (me->GetDistance2d(ptarget) <= 1.0f)
-                        DoCast(4050, ptarget);
+                        DoCast(ptarget, 4050);
                     else
                         me->GetMotionMaster()->MoveChase(ptarget);
                 }
