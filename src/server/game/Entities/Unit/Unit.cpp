@@ -11805,8 +11805,7 @@ void Unit::Mount(uint32 mount, uint32 VehicleId, uint32 creatureEntry)
             {
                 GetVehicleKit()->Reset();
 
-                // mounts can also have accessories
-                GetVehicleKit()->InstallAllAccessories(creatureEntry);
+               
 
                 // Send others that we now have a vehicle
                 WorldPacket data(SMSG_PLAYER_VEHICLE_DATA, GetPackGUID().size()+4);
@@ -11816,6 +11815,9 @@ void Unit::Mount(uint32 mount, uint32 VehicleId, uint32 creatureEntry)
 
                 data.Initialize(SMSG_ON_CANCEL_EXPECTED_RIDE_VEHICLE_AURA, 0);
                 plr->GetSession()->SendPacket(&data);
+				
+				 // mounts can also have accessories
+                GetVehicleKit()->InstallAllAccessories(creatureEntry);
             }
         }
     }
