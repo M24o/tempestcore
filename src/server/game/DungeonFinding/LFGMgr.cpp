@@ -1600,7 +1600,7 @@ void LFGMgr::UpdateProposal(uint32 proposalId, uint32 lowGuid, bool accept)
         grp->SetDungeonDifficulty(Difficulty(dungeon->difficulty));
         grp->SetLfgDungeonEntry(dungeon->Entry());
         grp->SetLfgStatus(LFG_STATUS_NOT_SAVED);
-        grp->SendUpdate();
+        
 
         // Remove players/groups from Queue
         for (LfgGuidList::const_iterator it = pProposal->queues.begin(); it != pProposal->queues.end(); ++it)
@@ -1611,6 +1611,9 @@ void LFGMgr::UpdateProposal(uint32 proposalId, uint32 lowGuid, bool accept)
         {
             (*it)->CastSpell(*it, LFG_SPELL_DUNGEON_COOLDOWN, false);
             TeleportPlayer(*it, false);
+         
+         // Update group info
+         grp->SendUpdate();
         }
 
         for (LfgProposalPlayerMap::const_iterator it = pProposal->players.begin(); it != pProposal->players.end(); ++it)
