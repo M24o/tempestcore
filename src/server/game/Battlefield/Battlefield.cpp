@@ -183,8 +183,8 @@ bool Battlefield::Update(uint32 diff)
     }else m_LastResurectTimer-=diff;
 
     sLog.outBasic("\n BATTLEFIELD CLASS STATUS:");
-    sLog.outBasic("  players in zone:  %d", m_players.size());
-    sLog.outBasic("  players in queue: %d / %d", m_PlayersInQueue[0].size(), m_PlayersInQueue[1].size()");
+    sLog.outBasic("  players in zone:  %d / %d", m_players[0].size(), m_players[1].size());
+    sLog.outBasic("  players in queue: %d / %d", m_PlayersInQueue[0].size(), m_PlayersInQueue[1].size());
     sLog.outBasic("  players in war:   %d / %d", m_PlayersInWar[0].size(), m_PlayersInWar[1].size());
     sLog.outBasic("  invited players:  %d / %d", m_InvitedPlayers[0].size(), m_InvitedPlayers[1].size());
     sLog.outBasic("  players to kick:  %d / %d", m_PlayersWillBeKick[0].size(), m_PlayersWillBeKick[1].size());
@@ -201,7 +201,7 @@ void Battlefield::InvitePlayerInZoneToQueue()
     for (uint32 team = 0; team < 2; ++team)
         for (PlayerSet::const_iterator p_itr = m_players[team].begin(); p_itr != m_players[team].end(); ++p_itr)
         {
-            sLog.outBasic("  player (GUID: %d) invited to queue", (*_pitr)->GetGUID());
+            sLog.outBasic("  player (GUID: %d) invited to queue", (*p_itr)->GetGUID());
             InvitePlayerToQueue((*p_itr));
         }
 
@@ -549,7 +549,7 @@ bool Battlefield::AddOrSetPlayerToCorrectBfGroup(Player *plr)
     if(!group)
     { 
         sLog.outError("Error:OutdoorPvPWG::AddOrSetPlayerToCorrectBgGroup can't get a group");
-        sLog.outBasic("[ADD OR SET [...] GROUPD <end>] => (!group)")
+        sLog.outBasic("[ADD OR SET [...] GROUPD <end>] => (!group)");
         return false;
     }
     else 
